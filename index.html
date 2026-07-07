@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Florangel Salgado from Venezuela - Personal homepage with web development resources">
+    <meta name="author" content="Florangel Salgado">
+    <title>WDD 131 – Dynamic Web Fundamentals – Florangel Salgado</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Connection -->
+    <link rel="stylesheet" href="styles/base.css">
+    
+    <!-- JavaScript Connection -->
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">I-Learn</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
+            <a href="#">Final Project</a>
+        </nav>
+    </header>
 
+    <!-- MAIN CONTENT -->
+    <main>
+        <h1>Florangel Salgado</h1>
+        
+        <div class="cards-container">
+            <!-- CARD 1: About Me -->
+            <section class="card">
+                <h2>About Me</h2>
+                <div class="card-content">
+                    <div class="text-content">
+                        <p>Hello! I'm Florangel Salgado from Venezuela, a beautiful country in South America. I'm passionate about learning web development and creating amazing digital experiences. In my free time, I enjoy exploring new technologies and connecting with people from around the world.</p>
+                        
+                        <div class="location-info">
+                            <h3>Venezuela 🇻🇪</h3>
+                            <p>Venezuela is located in the north of South America, bordering the Caribbean Sea. It's home to Angel Falls, the world's highest waterfall at 979 meters. The country has the largest oil reserves in the world and features diverse landscapes from beaches to mountains.</p>
+                        </div>
+                    </div>
+                    <div class="image-content">
+                        <img src="images/fotodeperfil.jpg" alt="Photo of Florangel Salgado from Venezuela">
+                        <img src="images/bandera.png" alt="Flag of Venezuela" class="flag-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- CARD 2: Web Dev Resources -->
+            <section class="card">
+                <h2>Web Dev Resources</h2>
+                <ul class="resources-list">
+                    <li><a href="https://dev.to" target="_blank" rel="noopener">Dev.to Community</a></li>
+                    <li><a href="https://smashingmagazine.com" target="_blank" rel="noopener">Smashing Magazine</a></li>
+                    <li><a href="https://csstricks.com" target="_blank" rel="noopener">CSS Tricks</a></li>
+                    <li><a href="https://w3schools.com" target="_blank" rel="noopener">W3 Schools</a></li>
+                    <li><a href="https://udemy.com" target="_blank" rel="noopener">Udemy</a></li>
+                    <li><a href="https://picsum.photos" target="_blank" rel="noopener">Lorem Picsum Image Placeholder</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌸 Florangel Salgado 🌸 Venezuela</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
