@@ -3,63 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Florangel Salgado from Venezuela">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Florangel Salgado">
     <meta name="author" content="Florangel Salgado">
     <title>WDD 131 – Dynamic Web Fundamentals – Florangel Salgado</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
+
     <header>
-        <div class="header-top">
+        <div class="header-title">
             <h1>WDD 131: Dynamic Web Fundamentals</h1>
         </div>
         <nav>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">I-Learn</a>
-            <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank">I-Learn</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank">Scripture</a>
             <a href="#">Final Project</a>
         </nav>
     </header>
 
     <main>
-        <h1 class="page-title">Florangel Salgado</h1>
-        
-        <div class="cards-container">
+        <h1 class="main-title">Florangel Salgado</h1>
+
+        <div class="card-container">
+            <!-- CARD 1: ABOUT ME -->
             <section class="card">
                 <div class="card-header">
                     <h2>About Me</h2>
                 </div>
-                <div class="card-content">
-                    <p>My name is Florangel and I go by Florangel. I was born in Venezuela and live with my family in Venezuela. I am currently studying web development. I love to learn new things and I'm passionate about technology. I enjoy creating digital experiences.</p>
-                    
-                    <div class="location-section">
-                        <h3>Venezuela 🇻</h3>
-                        <div class="location-content">
-                            <img src="images/bandera.png" alt="Flag of Venezuela" class="location-flag">
-                            <p>Venezuela is located in the north of South America, bordering the Caribbean Sea. It's home to Angel Falls, the world's highest waterfall at 979 meters. The country has the largest oil reserves in the world.</p>
+                <div class="card-body about-layout">
+                    <div class="about-text">
+                        <p>My name is Florangel and I go by Florangel. I was born in Venezuela and live with my family here. I am currently studying web development and I am passionate about learning new technologies. I love to travel and I love to learn new things.</p>
+                        
+                        <h3 class="location-title">Venezuela 🇪</h3>
+                        <hr>
+                        
+                        <div class="flag-section">
+                            <div class="flag-container">
+                                <img src="images/bandera.png" alt="Flag of Venezuela" class="flag-img">
+                                <p class="flag-caption">Official Flag of Venezuela</p>
+                            </div>
+                            <p>Venezuela is located in the north of South America, bordering the Caribbean Sea. It is home to Angel Falls, the world's highest waterfall. The country has diverse landscapes from beaches to mountains and is known for its rich culture.</p>
                         </div>
                     </div>
-                    
-                    <img src="images/fotodeperfil.jpg" alt="Photo of Florangel Salgado" class="profile-photo">
+                    <img src="images/fotodeperfil.jpg" alt="Photo of Florangel Salgado" class="profile-img">
                 </div>
             </section>
 
+            <!-- CARD 2: RESOURCES -->
             <section class="card">
                 <div class="card-header">
                     <h2>Web Dev Resources</h2>
                 </div>
-                <div class="card-content">
+                <div class="card-body">
                     <ul class="resource-list">
-                        <li><a href="https://dev.to" target="_blank" rel="noopener">Dev.to Community</a></li>
-                        <li><a href="https://smashingmagazine.com" target="_blank" rel="noopener">Smashing Magazine</a></li>
-                        <li><a href="https://csstricks.com" target="_blank" rel="noopener">CSS Tricks</a></li>
-                        <li><a href="https://w3schools.com" target="_blank" rel="noopener">W3 Schools</a></li>
-                        <li><a href="https://udemy.com" target="_blank" rel="noopener">Udemy</a></li>
-                        <li><a href="https://picsum.photos" target="_blank" rel="noopener">Lorem Picsum Image Placeholder</a></li>
+                        <li><a href="https://dev.to" target="_blank">Dev.to Community</a></li>
+                        <li><a href="https://smashingmagazine.com" target="_blank">Smashing Magazine</a></li>
+                        <li><a href="https://csstricks.com" target="_blank">CSS Tricks</a></li>
+                        <li><a href="https://w3schools.com" target="_blank">W3 Schools</a></li>
+                        <li><a href="https://udemy.com" target="_blank">Udemy</a></li>
+                        <li><a href="https://picsum.photos" target="_blank">Lorem Picsum Image Placeholder</a></li>
                     </ul>
                 </div>
             </section>
@@ -67,8 +71,9 @@
     </main>
 
     <footer>
-        <p>&copy;<span id="currentyear"></span> 🌸 Florangel Salgado 🌸 Venezuela</p>
-        <p id="lastModified">Last Modification:</p>
+        <p>&copy; <span id="currentyear"></span> 🌸 Florangel Salgado  Venezuela</p>
+        <p id="lastModified"></p>
     </footer>
+
 </body>
 </html>
