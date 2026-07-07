@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 131 - Florangel Salgado">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Florangel Salgado">
     <meta name="author" content="Florangel Salgado">
     <title>WDD 131 – Dynamic Web Fundamentals – Florangel Salgado</title>
     <link rel="stylesheet" href="styles/base.css">
@@ -12,9 +12,7 @@
 <body>
 
     <header>
-        <div class="header-title">
-            <h1>WDD 131: Dynamic Web Fundamentals</h1>
-        </div>
+        <h1>WDD 131: Dynamic Web Fundamentals</h1>
         <nav>
             <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
             <a href="https://byupw.instructure.com/" target="_blank">I-Learn</a>
@@ -24,40 +22,32 @@
     </header>
 
     <main>
-        <h1 class="main-title">Florangel Salgado</h1>
+        <h1 class="page-title">Florangel Salgado</h1>
 
-        <div class="card-container">
-            <section class="card">
-                <div class="card-header">
-                    <h2>About Me</h2>
-                </div>
-                <div class="card-body">
-                    <div class="about-layout">
-                        <div class="about-text">
-                            <p>My name is Florangel and I go by Florangel. I was born in Venezuela and live with my family here. I am currently studying web development and I am passionate about learning new technologies. I love to travel and I love to learn new things.</p>
-                            
-                            <h3 class="location-title">Venezuela</h3>
-                            <hr>
-                            
-                            <div class="flag-section">
-                                <div class="flag-container">
-                                    <img src="images/bandera.png" alt="Flag of Venezuela" class="flag-img">
-                                    <p class="flag-caption">Official Flag of Venezuela</p>
-                                </div>
-                                <p>Venezuela is located in the north of South America, bordering the Caribbean Sea. It is home to Angel Falls, the world's highest waterfall. The country has diverse landscapes from beaches to mountains and is known for its rich culture.</p>
-                            </div>
+        <div class="cards">
+            <section class="card about-card">
+                <h2>About Me</h2>
+                <div class="card-content">
+                    <p class="intro-text">My name is Florangel and I go by Florangel. I was born in Venezuela and live with my family here. I am currently studying web development and I am passionate about learning new technologies. I love to travel and I love to learn new things.</p>
+                    <img src="images/fotodeperfil.jpg" alt="Photo of Florangel Salgado" class="profile-photo">
+                    
+                    <h3 class="location-title">Venezuela</h3>
+                    <hr>
+                    
+                    <div class="flag-info">
+                        <div class="flag-box">
+                            <img src="images/bandera.png" alt="Flag of Venezuela" class="flag-img">
+                            <p class="flag-caption">Official Flag of Venezuela</p>
                         </div>
-                        <img src="images/fotodeperfil.jpg" alt="Photo of Florangel Salgado" class="profile-img">
+                        <p class="flag-text">Venezuela is located in the north of South America, bordering the Caribbean Sea. It is home to Angel Falls, the world's highest waterfall. The country has diverse landscapes from beaches to mountains and is known for its rich culture.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="card">
-                <div class="card-header">
-                    <h2>Web Dev Resources</h2>
-                </div>
-                <div class="card-body">
-                    <ul class="resource-list">
+            <section class="card resources-card">
+                <h2>Web Dev Resources</h2>
+                <div class="card-content">
+                    <ul>
                         <li><a href="https://dev.to" target="_blank">Dev.to Community</a></li>
                         <li><a href="https://smashingmagazine.com" target="_blank">Smashing Magazine</a></li>
                         <li><a href="https://csstricks.com" target="_blank">CSS Tricks</a></li>
@@ -71,7 +61,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span>  Florangel Salgado 🌸 Venezuela</p>
+        <p>&copy;<span id="currentyear"></span> 🌸 Florangel Salgado  Venezuela</p>
         <p id="lastModified"></p>
     </footer>
 
