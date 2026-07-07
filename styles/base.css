@@ -1,1 +1,327 @@
+:root {
+    --venezuela-yellow: #FFCC00;
+    --venezuela-blue: #00247D;
+    --venezuela-red: #CF142B;
+    --primary-color: #00247D;
+    --secondary-color: #1a4466;
+    --accent-color: #CF142B;
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, var(--venezuela-yellow) 0%, var(--venezuela-blue) 50%, var(--venezuela-red) 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-bottom: 5px solid var(--venezuela-blue);
+}
+
+#course-title {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--white);
+    color: var(--venezuela-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: var(--white);
+}
+
+nav a:focus {
+    outline: 3px solid var(--venezuela-yellow);
+    outline-offset: 2px;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--venezuela-blue);
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--venezuela-yellow), var(--venezuela-blue), var(--venezuela-red));
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* ===== CARDS ===== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+    background: linear-gradient(135deg, var(--venezuela-blue) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.text-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.location-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--bg-light);
+    border-left: 4px solid var(--venezuela-yellow);
+    padding-left: 1rem;
+}
+
+.location-info h3 {
+    color: var(--venezuela-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.location-info p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.image-content {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--venezuela-blue);
+    margin: 0.5rem auto;
+    display: block;
+}
+
+.flag-image {
+    max-width: 200px;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--venezuela-blue);
+}
+
+/* ===== RESOURCES ===== */
+.resources-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resources-list li {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--venezuela-blue);
+    transition: var(--transition);
+}
+
+.resources-list li:hover {
+    background: var(--venezuela-blue);
+    transform: translateX(5px);
+}
+
+.resources-list li:hover a {
+    color: var(--white);
+}
+
+.resources-list a {
+    color: var(--venezuela-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: block;
+}
+
+.resources-list a:hover {
+    color: var(--white);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(135deg, var(--venezuela-yellow) 0%, var(--venezuela-blue) 50%, var(--venezuela-red) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 5px solid var(--venezuela-blue);
+}
+
+footer p {
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer p:first-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#lastModified {
+    color: #FFCC00;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    #course-title {
+        font-size: 1.4rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #course-title {
+        font-size: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .card h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid var(--venezuela-yellow);
+    outline-offset: 2px;
+}
+
+a {
+    color: var(--venezuela-blue);
+}
+
+.card h2,
+header,
+footer {
+    color: var(--white);
+}
