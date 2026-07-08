@@ -1,1 +1,36 @@
-
+/* Larger Screen Styles */
+@media screen and (min-width: 768px) {
+    
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Navigation - Always Visible */
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    #hamburger-menu {
+        display: none;
+    }
+    
+    /* Grid Layout - 3 columns for larger screens */
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Main padding */
+    main {
+        padding: 3rem 2rem;
+    }
+}
