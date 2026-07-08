@@ -1,25 +1,28 @@
 /* Larger Screen Styles */
 @media screen and (min-width: 768px) {
     
-    /* Header */
+    /* Header Layout */
     header {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
     }
     
-    header h1 {
+    header h2 {
         font-size: 2rem;
+        margin-bottom: 0;
     }
     
-    /* Navigation - Always Visible */
+    /* Navigation - Always Visible in Large View */
     nav ul {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
+        width: auto;
     }
     
+    /* Hide Hamburger Menu in Large View */
     #hamburger-menu {
         display: none;
     }
@@ -29,7 +32,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
     
-    /* Main padding */
+    /* Main padding adjustment */
     main {
         padding: 3rem 2rem;
     }
