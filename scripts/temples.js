@@ -11,7 +11,7 @@ const navMenu = document.getElementById('nav-menu');
 hamburgerMenu.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
-    // Change hamburger icon to X when menu is open
+    // Change hamburger icon to X when menu is open, and back to ☰ when closed
     if (navMenu.classList.contains('active')) {
         hamburgerMenu.innerHTML = '<span>&times;</span>';
     } else {
