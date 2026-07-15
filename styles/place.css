@@ -26,6 +26,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
 }
 
 /* Header - Full Width */
@@ -47,16 +49,20 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* Main - Full Width Container */
+/* Main - NO max-width */
 main {
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hero Wrapper - Full Width */
+/* Hero Wrapper - Full Width, NO max-width */
 .hero-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Hero Image - Full Width */
@@ -67,6 +73,8 @@ main {
     max-height: 500px;
     object-fit: cover;
     object-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* Card Base Styles */
@@ -170,7 +178,7 @@ footer p {
 }
 
 /* ==========================================
-   DESKTOP LAYOUT (Full Width - Matches Example)
+   DESKTOP LAYOUT (Full Width)
    ========================================== */
 @media (min-width: 901px) {
     /* Data card - positioned on LEFT over full-width image */
@@ -193,7 +201,7 @@ footer p {
         margin: 0;
     }
     
-    /* Footer - Full Width */
+    /* Footer */
     footer {
         margin-top: 520px;
     }
