@@ -1,20 +1,16 @@
-/* Global CSS Variables - Venezuela Flag Colors */
 :root {
     --venezuela-yellow: #FCC116;
     --venezuela-blue: #00247D;
     --venezuela-red: #CF142B;
     --text-dark: #222222;
     --text-light: #ffffff;
-    --bg-light: #f4f4f4;
     --card-bg: #ffffff;
-    --spacing-sm: 0.5rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     --border-radius: 8px;
 }
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -25,12 +21,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--bg-light);
-    margin: 0;
-    padding: 0;
 }
 
-/* Header - Full Width */
 header {
     background: linear-gradient(135deg, 
         var(--venezuela-yellow) 0%, var(--venezuela-yellow) 33%, 
@@ -38,7 +30,6 @@ header {
         var(--venezuela-red) 66%, var(--venezuela-red) 100%);
     padding: var(--spacing-lg);
     text-align: center;
-    box-shadow: var(--shadow);
     width: 100%;
 }
 
@@ -46,44 +37,27 @@ header h1 {
     color: var(--text-light);
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    letter-spacing: 1px;
 }
 
-/* Main - NO max-width */
-main {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Hero Wrapper - Full Width, NO max-width */
-.hero-wrapper {
+/* Hero Section - Full Width */
+.hero-section {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
 
-/* Hero Image - Full Width */
 .hero-image {
     width: 100%;
-    height: auto;
-    display: block;
-    max-height: 500px;
+    height: 500px;
     object-fit: cover;
-    object-position: center;
-    margin: 0;
-    padding: 0;
+    display: block;
 }
 
-/* Card Base Styles */
 .data-card, .weather-card {
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    max-width: 300px;
+    width: 280px;
 }
 
 .data-card h2, .weather-card h2 {
@@ -92,21 +66,18 @@ main {
     font-size: 1.75rem;
     margin-bottom: var(--spacing-md);
     border-bottom: 4px solid var(--venezuela-yellow);
-    padding-bottom: var(--spacing-sm);
+    padding-bottom: 0.5rem;
 }
 
-/* Pseudo-element for desktop weather icon */
 .weather-card h2::after {
     content: "";
     margin-left: 10px;
-    font-size: 1.5rem;
 }
 
-/* Definition List Styling */
 dl {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 0.75rem var(--spacing-md);
+    gap: 0.75rem 1.5rem;
 }
 
 dt {
@@ -119,7 +90,6 @@ dd {
     color: var(--text-dark);
 }
 
-/* Weather Icon for Mobile */
 .weather-icon-mobile {
     text-align: center;
     margin-bottom: var(--spacing-md);
@@ -130,46 +100,37 @@ dd {
     height: 80px;
 }
 
-/* Footer - Full Width */
 footer {
-    background-color: var(--venezuela-red);
+    background: var(--venezuela-red);
     color: var(--text-light);
     text-align: center;
     padding: var(--spacing-lg);
-    margin-top: var(--spacing-md);
     width: 100%;
 }
 
-footer p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
-}
-
-/* ==========================================
-   MOBILE LAYOUT (Default)
-   ========================================== */
+/* MOBILE */
 @media (max-width: 900px) {
+    .hero-section {
+        position: static;
+    }
+    
+    .hero-image {
+        height: auto;
+        max-height: 500px;
+    }
+    
     .data-card, .weather-card {
-        margin: var(--spacing-md);
-        max-width: 100%;
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+        position: static;
     }
     
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .data-card h2, .weather-card h2 {
-        font-size: 1.75rem;
-    }
-    
-    /* Hide desktop pseudo-element icon on mobile */
     .weather-card h2::after {
         display: none;
     }
     
     dl {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
     }
     
     dt {
@@ -177,37 +138,23 @@ footer p {
     }
 }
 
-/* ==========================================
-   DESKTOP LAYOUT (Full Width)
-   ========================================== */
+/* DESKTOP */
 @media (min-width: 901px) {
-    /* Data card - positioned on LEFT over full-width image */
     .data-card {
         position: absolute;
         left: 20px;
         top: 100px;
         z-index: 10;
-        background: rgba(255, 255, 255, 0.95);
-        margin: 0;
     }
     
-    /* Weather card - positioned on RIGHT over full-width image */
     .weather-card {
         position: absolute;
         right: 20px;
         top: 100px;
         z-index: 10;
-        background: rgba(255, 255, 255, 0.95);
-        margin: 0;
-    }
-    
-    /* Footer */
-    footer {
-        margin-top: 520px;
     }
 }
 
-/* Focus States for Accessibility */
 :focus {
     outline: 3px solid var(--venezuela-yellow);
     outline-offset: 2px;
