@@ -28,7 +28,7 @@ body {
     background-color: var(--bg-light);
 }
 
-/* Header with Venezuela Flag Colors */
+/* Header - Full Width */
 header {
     background: linear-gradient(135deg, 
         var(--venezuela-yellow) 0%, var(--venezuela-yellow) 33%, 
@@ -37,6 +37,7 @@ header {
     padding: var(--spacing-lg);
     text-align: center;
     box-shadow: var(--shadow);
+    width: 100%;
 }
 
 header h1 {
@@ -46,20 +47,26 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* Hero Wrapper - Container for image and overlays */
-.hero-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Main - Full Width Container */
+main {
+    width: 100%;
 }
 
-/* Hero Image */
+/* Hero Wrapper - Full Width */
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Hero Image - Full Width */
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
     max-height: 500px;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Card Base Styles */
@@ -68,6 +75,7 @@ header h1 {
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    max-width: 300px;
 }
 
 .data-card h2, .weather-card h2 {
@@ -81,7 +89,7 @@ header h1 {
 
 /* Pseudo-element for desktop weather icon */
 .weather-card h2::after {
-    content: "⛅";
+    content: "";
     margin-left: 10px;
     font-size: 1.5rem;
 }
@@ -114,13 +122,14 @@ dd {
     height: 80px;
 }
 
-/* Footer */
+/* Footer - Full Width */
 footer {
     background-color: var(--venezuela-red);
     color: var(--text-light);
     text-align: center;
     padding: var(--spacing-lg);
     margin-top: var(--spacing-md);
+    width: 100%;
 }
 
 footer p {
@@ -134,6 +143,7 @@ footer p {
 @media (max-width: 900px) {
     .data-card, .weather-card {
         margin: var(--spacing-md);
+        max-width: 100%;
     }
     
     header h1 {
@@ -160,35 +170,32 @@ footer p {
 }
 
 /* ==========================================
-   DESKTOP LAYOUT (Matches wireframe)
+   DESKTOP LAYOUT (Full Width - Matches Example)
    ========================================== */
 @media (min-width: 901px) {
-    /* Data card - positioned on LEFT over image */
+    /* Data card - positioned on LEFT over full-width image */
     .data-card {
         position: absolute;
         left: 20px;
         top: 100px;
-        width: 280px;
         z-index: 10;
         background: rgba(255, 255, 255, 0.95);
         margin: 0;
     }
     
-    /* Weather card - positioned on RIGHT over image */
+    /* Weather card - positioned on RIGHT over full-width image */
     .weather-card {
         position: absolute;
         right: 20px;
         top: 100px;
-        width: 280px;
         z-index: 10;
         background: rgba(255, 255, 255, 0.95);
         margin: 0;
     }
     
-    /* Footer below hero */
+    /* Footer - Full Width */
     footer {
         margin-top: 520px;
-        border-radius: var(--border-radius);
     }
 }
 
