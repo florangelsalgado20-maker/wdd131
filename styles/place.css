@@ -46,6 +46,13 @@ header h1 {
     letter-spacing: 1px;
 }
 
+/* Main container */
+main {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Hero Section */
 .hero {
     width: 100%;
@@ -60,11 +67,10 @@ header h1 {
     object-fit: cover;
 }
 
-/* Section Styling */
+/* Section Styling - Cards */
 .data, .weather {
     background-color: var(--card-bg);
     padding: var(--spacing-lg);
-    margin: var(--spacing-md);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
@@ -80,7 +86,7 @@ header h1 {
 
 /* Pseudo-element for desktop weather icon */
 .weather h2::after {
-    content: "⛅";
+    content: "";
     margin-left: 10px;
     font-size: 1.5rem;
 }
@@ -90,8 +96,6 @@ dl {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 0.75rem var(--spacing-md);
-    max-width: 400px;
-    margin: 0 auto;
 }
 
 dt {
@@ -129,8 +133,14 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* MOBILE LAYOUT (Default) */
+/* ==========================================
+   MOBILE LAYOUT (Default - Stacked vertically)
+   ========================================== */
 @media (max-width: 900px) {
+    .data, .weather {
+        margin: var(--spacing-md);
+    }
+    
     header h1 {
         font-size: 2rem;
     }
@@ -154,47 +164,36 @@ footer p {
     }
 }
 
-/* DESKTOP LAYOUT */
+/* ==========================================
+   DESKTOP LAYOUT (Matches wireframe exactly)
+   ========================================== */
 @media (min-width: 901px) {
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-        position: relative;
-        min-height: 600px;
-    }
-    
-    .hero {
-        grid-row: 1;
-    }
-    
-    .hero img {
-        max-height: 500px;
-        object-fit: cover;
-        width: 100%;
-    }
-    
+    /* Data on LEFT - positioned over hero image */
     .data {
         position: absolute;
         left: 20px;
-        top: 150px;
-        max-width: 300px;
+        top: 100px;
+        width: 280px;
         z-index: 10;
         background: rgba(255, 255, 255, 0.95);
+        margin: 0;
     }
     
+    /* Weather on RIGHT - positioned over hero image */
     .weather {
         position: absolute;
         right: 20px;
-        top: 150px;
-        max-width: 300px;
+        top: 100px;
+        width: 280px;
         z-index: 10;
         background: rgba(255, 255, 255, 0.95);
+        margin: 0;
     }
     
+    /* Footer positioned below the hero image */
     footer {
-        grid-row: 2;
         margin-top: 520px;
+        border-radius: var(--border-radius);
     }
 }
 
