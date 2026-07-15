@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Venezuela - Land of Angel Falls and Caribbean beauty">
+    <meta name="description" content="Discover Venezuela">
     <meta name="author" content="Flor Angel Salgado">
     <title>Venezuela</title>
     <link rel="stylesheet" href="styles/place.css">
@@ -14,65 +14,65 @@
         <h1>Venezuela</h1>
     </header>
 
-    <div class="hero-section">
-        <img 
-            srcset="images/venezuela-small.webp 480w,
-                    images/venezuela-medium.webp 768w,
-                    images/venezuela-large.webp 1200w"
-            sizes="(max-width: 600px) 480px,
-                   (max-width: 900px) 768px,
-                   1200px"
-            src="images/venezuela-large.webp"
-            alt="Angel Falls in Canaima National Park, Venezuela"
-            class="hero-image">
-        
-        <section class="data-card">
-            <h2>Data</h2>
-            <dl>
-                <dt>Area:</dt>
-                <dd>916,445 km²</dd>
-                <dt>Population:</dt>
-                <dd>28,468,000</dd>
-                <dt>Capital:</dt>
-                <dd>Caracas</dd>
-                <dt>Languages:</dt>
-                <dd>Spanish</dd>
-                <dt>Currency:</dt>
-                <dd>Bolívar (VES)</dd>
-                <dt>Time Zone:</dt>
-                <dd>UTC-4</dd>
-            </dl>
-        </section>
+    <main>
+        <div class="hero-section">
+            <img 
+                srcset="images/venezuela-small.webp 480w,
+                        images/venezuela-medium.webp 768w,
+                        images/venezuela-large.webp 1200w"
+                sizes="(max-width: 600px) 480px,
+                       (max-width: 900px) 768px,
+                       1200px"
+                src="images/venezuela-large.webp"
+                alt="Angel Falls in Canaima National Park, Venezuela"
+                class="hero-image">
+            
+            <section class="data-card">
+                <h2>Data</h2>
+                <dl>
+                    <dt>Area:</dt>
+                    <dd>916,445 km²</dd>
+                    <dt>Population:</dt>
+                    <dd>28,468,000</dd>
+                    <dt>Capital:</dt>
+                    <dd>Caracas</dd>
+                    <dt>Languages:</dt>
+                    <dd>Spanish</dd>
+                    <dt>Currency:</dt>
+                    <dd>Bolívar (VES)</dd>
+                    <dt>Time Zone:</dt>
+                    <dd>UTC-4</dd>
+                </dl>
+            </section>
 
-        <section class="weather-card">
-            <h2>Weather</h2>
-            <div class="weather-icon-mobile">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-label="Partly cloudy">
-                    <circle cx="32" cy="32" r="12" fill="#FCC116"/>
-                    <path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4 4M45 45l4 4M15 49l4-4M45 19l4-4" 
-                          stroke="#FCC116" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M20 40 Q24 35 30 36 Q34 30 40 32 Q46 34 46 40 Q48 44 44 48 Q46 52 42 54 Q38 56 34 54 Q30 56 26 54 Q22 52 24 48 Q20 46 20 40" 
-                          fill="#E8E8E8" stroke="#999" stroke-width="1"/>
-                </svg>
-            </div>
-            <dl>
-                <dt>Temperature:</dt>
-                <dd id="temp">28 °C</dd>
-                <dt>Conditions:</dt>
-                <dd>Partly Cloudy</dd>
-                <dt>Wind:</dt>
-                <dd id="wind">12 km/h</dd>
-                <dt>Wind Chill:</dt>
-                <dd id="wind-chill">N/A</dd>
-            </dl>
-        </section>
-    </div>
+            <section class="weather-card">
+                <h2>Weather</h2>
+                <div class="weather-icon-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-label="Partly cloudy">
+                        <circle cx="32" cy="32" r="12" fill="#FCC116"/>
+                        <path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4 4M45 45l4 4M15 49l4-4M45 19l4-4" 
+                              stroke="#FCC116" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M20 40 Q24 35 30 36 Q34 30 40 32 Q46 34 46 40 Q48 44 44 48 Q46 52 42 54 Q38 56 34 54 Q30 56 26 54 Q22 52 24 48 Q20 46 20 40" 
+                              fill="#E8E8E8" stroke="#999" stroke-width="1"/>
+                    </svg>
+                </div>
+                <dl>
+                    <dt>Temperature:</dt>
+                    <dd id="temp">28 °C</dd>
+                    <dt>Conditions:</dt>
+                    <dd>Partly Cloudy</dd>
+                    <dt>Wind:</dt>
+                    <dd id="wind">12 km/h</dd>
+                    <dt>Wind Chill:</dt>
+                    <dd id="wind-chill">N/A</dd>
+                </dl>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; <span id="current-year"></span> Flor Angel Salgado 🌺 Venezuela</p>
         <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
-
-    <script src="scripts/place.js"></script>
 </body>
 </html>
