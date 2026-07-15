@@ -46,20 +46,15 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* Main container */
-main {
+/* Hero Wrapper - Container for image and overlays */
+.hero-wrapper {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Hero Section */
-.hero {
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero img {
+/* Hero Image */
+.hero-image {
     width: 100%;
     height: auto;
     display: block;
@@ -67,15 +62,15 @@ main {
     object-fit: cover;
 }
 
-/* Section Styling - Cards */
-.data, .weather {
+/* Card Base Styles */
+.data-card, .weather-card {
     background-color: var(--card-bg);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
 
-.data h2, .weather h2 {
+.data-card h2, .weather-card h2 {
     color: var(--venezuela-blue);
     text-align: center;
     font-size: 1.75rem;
@@ -85,8 +80,8 @@ main {
 }
 
 /* Pseudo-element for desktop weather icon */
-.weather h2::after {
-    content: "";
+.weather-card h2::after {
+    content: "⛅";
     margin-left: 10px;
     font-size: 1.5rem;
 }
@@ -134,10 +129,10 @@ footer p {
 }
 
 /* ==========================================
-   MOBILE LAYOUT (Default - Stacked vertically)
+   MOBILE LAYOUT (Default)
    ========================================== */
 @media (max-width: 900px) {
-    .data, .weather {
+    .data-card, .weather-card {
         margin: var(--spacing-md);
     }
     
@@ -145,12 +140,12 @@ footer p {
         font-size: 2rem;
     }
     
-    .data h2, .weather h2 {
+    .data-card h2, .weather-card h2 {
         font-size: 1.75rem;
     }
     
     /* Hide desktop pseudo-element icon on mobile */
-    .weather h2::after {
+    .weather-card h2::after {
         display: none;
     }
     
@@ -165,11 +160,11 @@ footer p {
 }
 
 /* ==========================================
-   DESKTOP LAYOUT (Matches wireframe exactly)
+   DESKTOP LAYOUT (Matches wireframe)
    ========================================== */
 @media (min-width: 901px) {
-    /* Data on LEFT - positioned over hero image */
-    .data {
+    /* Data card - positioned on LEFT over image */
+    .data-card {
         position: absolute;
         left: 20px;
         top: 100px;
@@ -179,8 +174,8 @@ footer p {
         margin: 0;
     }
     
-    /* Weather on RIGHT - positioned over hero image */
-    .weather {
+    /* Weather card - positioned on RIGHT over image */
+    .weather-card {
         position: absolute;
         right: 20px;
         top: 100px;
@@ -190,7 +185,7 @@ footer p {
         margin: 0;
     }
     
-    /* Footer positioned below the hero image */
+    /* Footer below hero */
     footer {
         margin-top: 520px;
         border-radius: var(--border-radius);
