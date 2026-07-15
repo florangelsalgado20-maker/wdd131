@@ -1,0 +1,226 @@
+/* =========================================
+   1. GLOBAL CSS VARIABLES (Requirement)
+   ========================================= */
+:root {
+    /* Venezuela Flag Color Scheme */
+    --venezuela-yellow: #FCC116;
+    --venezuela-blue: #00247D;
+    --venezuela-red: #CF142B;
+    
+    /* Typography & Base Colors */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --text-dark: #222222;
+    --text-light: #ffffff;
+    --bg-light: #f4f4f4;
+    --card-bg: #ffffff;
+    
+    /* Design Principles: Spacing & Shadows */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+}
+
+/* =========================================
+   2. RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* =========================================
+   3. HEADER & HERO
+   ========================================= */
+header {
+    /* Color scheme supporting the country */
+    background: linear-gradient(135deg, 
+        var(--venezuela-yellow) 0%, var(--venezuela-yellow) 33%, 
+        var(--venezuela-blue) 33%, var(--venezuela-blue) 66%, 
+        var(--venezuela-red) 66%, var(--venezuela-red) 100%);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* =========================================
+   4. MAIN CONTENT SECTIONS (Proximity & White Space)
+   ========================================= */
+.data, .weather {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.data h2, .weather h2 {
+    color: var(--venezuela-blue);
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 4px solid var(--venezuela-yellow);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* =========================================
+   5. PSEUDO-ELEMENT FOR WEATHER ICON (Requirement)
+   ========================================= */
+/* Only show the emoticon pseudo-element on larger screens */
+.weather h2::after {
+    content: "⛅";
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   6. DEFINITION LIST STYLING (Alignment & Repetition)
+   ========================================= */
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.75rem var(--spacing-md);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--venezuela-blue);
+    text-align: right;
+}
+
+dd {
+    color: var(--text-dark);
+}
+
+/* Mobile-specific: Hide SVG on desktop, show on mobile */
+.weather-icon-mobile {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.weather-icon-mobile svg {
+    width: 80px;
+    height: 80px;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--venezuela-red);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+footer p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   8. MEDIA QUERIES (Requirement)
+   ========================================= */
+
+/* MOBILE LAYOUT (Default, but explicitly defined for clarity) */
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Hide desktop pseudo-element icon on mobile */
+    .weather h2::after {
+        display: none;
+    }
+    
+    /* Stack definition lists on very small screens for better readability */
+    @media (max-width: 480px) {
+        dl {
+            grid-template-columns: 1fr;
+            gap: 0.25rem;
+        }
+        dt {
+            text-align: left;
+            margin-top: 0.75rem;
+        }
+    }
+}
+
+/* DESKTOP LAYOUT (Matches Wireframe: Side-by-Side) */
+@media (min-width: 901px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-areas: 
+            "hero hero"
+            "data weather"
+            "footer footer";
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        grid-area: hero;
+        margin-bottom: var(--spacing-md);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .hero img {
+        max-height: 400px; /* Constrain height on desktop */
+    }
+
+    .data {
+        grid-area: data;
+        margin: 0; /* Remove default margin, let grid gap handle it */
+    }
+
+    .weather {
+        grid-area: weather;
+        margin: 0;
+    }
+
+    footer {
+        grid-area: footer;
+        margin-top: var(--spacing-md);
+        border-radius: var(--border-radius);
+    }
+}
+
+/* =========================================
+   9. ACCESSIBILITY (Color Contrast & Focus)
+   ========================================= */
+:focus {
+    outline: 3px solid var(--venezuela-yellow);
+    outline-offset: 2px;
+}
