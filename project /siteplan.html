@@ -13,18 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- CSS Variables for Color Scheme & Typography --- */
-        :root {
-            --color-forest: #2E5A36;
-            --color-mint: #D4EED1;
-            --color-white: #FFFFFF;
-            --color-offwhite: #F8F9FA;
-            --color-charcoal: #333333;
-            
-            --font-heading: 'Merriweather', serif;
-            --font-body: 'Open Sans', sans-serif;
-        }
-
         /* --- Base Reset & Typography --- */
         * {
             box-sizing: border-box;
@@ -33,15 +21,15 @@
         }
 
         body {
-            font-family: var(--font-body);
-            color: var(--color-charcoal);
-            background-color: var(--color-offwhite);
+            font-family: 'Open Sans', sans-serif;
+            color: #333333; /* Charcoal */
+            background-color: #F8F9FA; /* Off-White */
             line-height: 1.6;
         }
 
         h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            color: var(--color-forest);
+            font-family: 'Merriweather', serif;
+            color: #2E5A36; /* Forest Green */
             line-height: 1.2;
             margin-bottom: 0.5em;
         }
@@ -49,7 +37,7 @@
         h1 { font-size: 2.5rem; }
         h2 { 
             font-size: 1.8rem; 
-            border-bottom: 3px solid var(--color-mint);
+            border-bottom: 3px solid #D4EED1; /* Mint Green */
             padding-bottom: 5px;
             margin-top: 1.5rem;
         }
@@ -58,20 +46,28 @@
         p { margin-bottom: 1rem; }
         
         a {
-            color: var(--color-forest);
+            color: #2E5A36;
             text-decoration: none;
             font-weight: 600;
         }
         a:hover { text-decoration: underline; }
 
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+        }
+
         /* --- Layout --- */
         header {
-            background-color: var(--color-forest);
-            color: var(--color-white);
+            background-color: #2E5A36; /* Forest Green */
+            color: #FFFFFF;
             padding: 3rem 1rem;
             text-align: center;
         }
-        header h1 { color: var(--color-white); margin-bottom: 0.5rem; }
+        header h1 { color: #FFFFFF; margin-bottom: 0.5rem; }
         header p { font-size: 1.2rem; opacity: 0.9; }
 
         main {
@@ -81,17 +77,17 @@
         }
 
         section {
-            background-color: var(--color-white);
+            background-color: #FFFFFF; /* White */
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
-            border-left: 5px solid var(--color-mint);
+            border-left: 5px solid #D4EED1; /* Mint Green */
         }
 
         footer {
-            background-color: var(--color-forest);
-            color: var(--color-white);
+            background-color: #2E5A36; /* Forest Green */
+            color: #FFFFFF;
             text-align: center;
             padding: 2rem 1rem;
             margin-top: 3rem;
@@ -102,12 +98,12 @@
         
         /* Navigation / TOC */
         .toc {
-            background: var(--color-mint);
+            background: #D4EED1; /* Mint Green */
             padding: 1.5rem;
             border-radius: 8px;
             margin-bottom: 2rem;
         }
-        .toc h3 { margin-top: 0; color: var(--color-forest); }
+        .toc h3 { margin-top: 0; color: #2E5A36; }
         .toc ul { list-style-type: none; padding-left: 0; }
         .toc li { margin-bottom: 0.5rem; }
         .toc a { display: block; padding: 5px; border-radius: 4px; }
@@ -132,12 +128,12 @@
             margin-bottom: 10px;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
-        .swatch-label { font-weight: 600; color: var(--color-forest); }
+        .swatch-label { font-weight: 600; color: #2E5A36; }
         .swatch-hex { font-family: monospace; font-size: 0.9rem; color: #666; }
 
         /* Typography Demo */
         .font-demo {
-            background: var(--color-offwhite);
+            background: #F8F9FA;
             padding: 15px;
             border-radius: 8px;
             margin-top: 10px;
@@ -168,7 +164,7 @@
         .wf-label {
             text-align: center;
             font-weight: 600;
-            color: var(--color-forest);
+            color: #2E5A36;
             margin-bottom: 10px;
             text-transform: uppercase;
             font-size: 0.9rem;
@@ -222,13 +218,13 @@
             border-radius: 4px;
         }
         .wf-btn {
-            background: var(--color-mint);
-            border: 1px solid var(--color-forest);
+            background: #D4EED1;
+            border: 1px solid #2E5A36;
             border-radius: 4px;
             padding: 4px;
             font-size: 0.7rem;
             text-align: center;
-            color: var(--color-forest);
+            color: #2E5A36;
             font-weight: bold;
         }
 
@@ -237,7 +233,7 @@
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             section { padding: 1.5rem; }
-            .wf-grid-3 { grid-template-columns: 1fr; } /* Stack grid on small screens for the desktop wireframe preview */
+            .wf-grid-3 { grid-template-columns: 1fr; } 
         }
     </style>
 </head>
@@ -252,36 +248,50 @@
         <nav class="toc">
             <h3>Document Outline</h3>
             <ul>
-                <li><a href="#site-name">1. Site Name</a></li>
-                <li><a href="#site-purpose">2. Site Purpose</a></li>
-                <li><a href="#scenarios">3. Scenarios</a></li>
-                <li><a href="#color-scheme">4. Color Scheme</a></li>
-                <li><a href="#typography">5. Typography</a></li>
-                <li><a href="#wireframes">6. Wireframes</a></li>
+                <li><a href="#naming-conventions">1. Naming Conventions</a></li>
+                <li><a href="#site-name">2. Site Name</a></li>
+                <li><a href="#site-purpose">3. Site Purpose</a></li>
+                <li><a href="#scenarios">4. Scenarios</a></li>
+                <li><a href="#color-scheme">5. Color Scheme</a></li>
+                <li><a href="#typography">6. Typography</a></li>
+                <li><a href="#wireframes">7. Wireframes</a></li>
             </ul>
         </nav>
 
+        <section id="naming-conventions">
+            <h2>1. File Structure &amp; Naming Conventions</h2>
+            <p>All files and folders referenced in this project follow standard web naming conventions: all lowercase letters, no spaces, and hyphens used for multi-word names.</p>
+            <ul>
+                <li><strong>Main Course Folder:</strong> <code>wdd131</code></li>
+                <li><strong>Project Subfolder:</strong> <code>project</code></li>
+                <li><strong>HTML Document:</strong> <code>siteplan.html</code></li>
+                <li><strong>Images Folder:</strong> <code>images</code></li>
+                <li><strong>Styles Folder:</strong> <code>styles</code></li>
+            </ul>
+        </section>
+
         <section id="site-name">
-            <h2>1. Site Name</h2>
+            <h2>2. Site Name</h2>
             <p><strong>Leafy Living</strong></p>
             <p>This name represents a focus on vibrant, indoor plant life and appeals to beginners looking to bring nature into their living spaces. It is friendly, memorable, and clearly communicates the site's niche to college students and young professionals. The domain could hypothetically be <em>leafylivingguide.com</em>.</p>
         </section>
 
         <section id="site-purpose">
-            <h2>2. Site Purpose</h2>
+            <h2>3. Site Purpose</h2>
             <p>An informational website created to help people who are new to having indoor plants take care of easy-to-maintain plants. The website will serve as a comprehensive guide for plant owners, giving them clear and useful advice on choosing the right plants, taking care of them, and fixing common problems that might come up. It focuses on three specific beginner-friendly plants to prevent users from feeling overwhelmed.</p>
         </section>
 
         <section id="scenarios">
-            <h2>3. Scenarios</h2>
-            <ul>
-                <li><strong>Scenario 1 (The Dorm Student):</strong> A college student living in a dorm room with low natural light wants to know which of the featured plants will survive in their space and how often they need to water it so it doesn't die.</li>
-                <li><strong>Scenario 2 (The Troubleshooter):</strong> A young professional notices the leaves on their new houseplant are turning yellow with brown tips. They visit the site to use the troubleshooting section to find out what is causing the issue and how to fix it.</li>
-            </ul>
+            <h2>4. Scenarios</h2>
+            <p>These are the specific questions our target audience (college students and young professionals) will ask when visiting the site:</p>
+            <ol>
+                <li><strong>Scenario 1 (The Dorm Student):</strong> "I live in a college dorm with very little natural sunlight; which of your recommended plants will survive in my room, and how often do I need to water it?"</li>
+                <li><strong>Scenario 2 (The Troubleshooter):</strong> "The leaves on my new houseplant are turning yellow with brown tips—what is causing this, and what steps can I take to save my plant?"</li>
+            </ol>
         </section>
 
         <section id="color-scheme">
-            <h2>4. Color Scheme</h2>
+            <h2>5. Color Scheme</h2>
             <p>The selected color palette reflects nature, growth, and a clean, modern aesthetic suitable for a plant care guide.</p>
             <div class="color-palette">
                 <div class="swatch">
@@ -312,7 +322,7 @@
         </section>
 
         <section id="typography">
-            <h2>5. Typography</h2>
+            <h2>6. Typography</h2>
             <p>Two web-safe Google Fonts have been selected for readability and aesthetic appeal.</p>
             
             <h3>Merriweather (Serif)</h3>
@@ -329,7 +339,7 @@
         </section>
 
         <section id="wireframes">
-            <h2>6. Wireframes</h2>
+            <h2>7. Wireframes</h2>
             <p>Below are the structural wireframe sketches for the <strong>Home Page</strong> layout in both desktop and mobile views, demonstrating the responsive grid and component hierarchy.</p>
             
             <div class="wireframe-container">
