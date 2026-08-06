@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan: Mountain Trail Hikers</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333333; /* Charcoal */
+            background-color: #F8F9FA; /* Off-White */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: #2E5A36; /* Dark Green */
+        }
+        header {
+            background-color: #2E5A36; /* Dark Green */
+            color: #F8F9FA;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #F8F9FA;
+            margin: 0;
+        }
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #CCCCCC;
+        }
+        footer {
+            background-color: #8B5A2B; /* Earthy Brown */
+            color: #F8F9FA;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        
+        /* Color Scheme Visualizers */
+        .color-box {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 1px solid #333333;
+            vertical-align: middle;
+        }
+        
+        /* Wireframe Styles */
+        .wireframe {
+            background-color: #E9ECEF;
+            border: 2px solid #333333;
+            padding: 15px;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .placeholder {
+            background-color: #CED4DA;
+            border: 1px dashed #6C757D;
+            padding: 15px;
+            text-align: center;
+            color: #495057;
+            font-family: monospace;
+        }
+        .desktop { max-width: 800px; }
+        .mobile { max-width: 300px; }
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Website Planning Document</h1>
+    </header>
+
+    <main>
+        <!-- 1. Site Name -->
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <p><strong>Mountain Trail Hikers</strong></p>
+            <p>This name represents a community and resource hub for hiking enthusiasts focused specifically on exploring mountain trails. It is descriptive, easy to remember, and clearly communicates the site's niche to the target audience. The domain could hypothetically be <em>mountaintrailhikers.com</em>.</p>
+        </section>
+
+        <!-- 2. Site Purpose -->
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>The purpose of this website is to provide a comprehensive resource for hikers of all skill levels. It will offer detailed trail maps, safety tips for high-altitude environments, gear recommendations, and a community forum for members to share their hiking experiences, photos, and trail condition reports.</p>
+        </section>
+
+        <!-- 3. Scenarios -->
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <ul>
+                <li><strong>Scenario 1:</strong> A beginner hiker wants to find a mountain trail that is not too strenuous and wants to know what essential gear to pack for a day trip.</li>
+                <li><strong>Scenario 2:</strong> An experienced hiker is looking for advanced, high-altitude trails in the region and wants to check recent trail condition reports submitted by other members before planning their weekend trip.</li>
+            </ul>
+        </section>
+
+        <!-- 4. Color Scheme -->
+        <section id="color-scheme">
+            <h2>Color Scheme</h2>
+            <p>The selected color palette reflects nature and the outdoors, fitting for a hiking website.</p>
+            <ul>
+                <li><span class="color-box" style="background-color: #2E5A36;"></span><strong>Dark Green (#2E5A36):</strong> Used for all headings (h1, h2, h3) and the main header background to represent forest foliage.</li>
+                <li><span class="color-box" style="background-color: #8B5A2B;"></span><strong>Earthy Brown (#8B5A2B):</strong> Used for the footer background and secondary accents to represent dirt and trails.</li>
+                <li><span class="color-box" style="background-color: #F8F9FA;"></span><strong>Off-White (#F8F9FA):</strong> Used for the main document background to ensure readability.</li>
+                <li><span class="color-box" style="background-color: #333333;"></span><strong>Charcoal (#333333):</strong> Used for paragraph text to provide strong contrast against the light background.</li>
+            </ul>
+        </section>
+
+        <!-- 5. Typography -->
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>Two web-safe Google Fonts have been selected for readability and aesthetic appeal.</p>
+            <ul>
+                <li><strong>Merriweather (Serif):</strong> Applied to all headings (h1, h2, h3). The serif style gives a classic, outdoorsy, and established feel to the titles.</li>
+                <li><strong>Open Sans (Sans-serif):</strong> Applied to all body text, paragraphs, and lists. It is highly legible on screens and provides a clean, modern contrast to the headings.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Wireframes -->
+        <section id="wireframes">
+            <h2>Wireframes</h2>
+            <p>Below are the wireframe sketches for the home page layout in both mobile and desktop views.</p>
+            
+            <h3>Desktop View</h3>
+            <div class="wireframe desktop">
+                <div class="placeholder">Header / Navigation Bar</div>
+                <div class="desktop-grid">
+                    <div class="placeholder">Sidebar (Links, Search)</div>
+                    <div class="placeholder">Main Content Area (Featured Trails, Articles)</div>
+                </div>
+                <div class="placeholder">Footer (Contact, Social Links)</div>
+            </div>
+
+            <h3>Mobile View</h3>
+            <div class="wireframe mobile">
+                <div class="placeholder">Header (Hamburger Menu)</div>
+                <div class="placeholder">Hero Image / Search Bar</div>
+                <div class="placeholder">Main Content Area (List of Trails)</div>
+                <div class="placeholder">Footer</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mountain Trail Hikers | WDD131 Project</p>
+    </footer>
+
+</body>
+</html>
