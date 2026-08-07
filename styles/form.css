@@ -1,0 +1,118 @@
+/* ===== Leafy Living - Product Review Form ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #F8F9FA;
+    color: #333333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2 { font-family: 'Merriweather', Georgia, serif; }
+
+/* ===== Header (barra oscura como el ejemplo) ===== */
+header {
+    background-color: #2E5A36;
+    color: #FFFFFF;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+header h1 { color: #FFFFFF; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 0.25rem; }
+header p { font-size: clamp(0.95rem, 2.5vw, 1.15rem); }
+
+/* ===== Proporcionalidad: se adapta a cualquier pantalla ===== */
+main { width: min(100% - 2rem, 720px); margin: 2rem auto; }
+
+section {
+    background: #FFFFFF;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+    border-top: 5px solid #D4EED1;
+}
+
+h2 { color: #2E5A36; font-size: clamp(1.25rem, 3vw, 1.6rem); margin-bottom: 1rem; }
+
+/* ===== Galería de plantas ===== */
+.plant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; }
+.plant-card { border: 2px solid #E3E6E8; border-radius: 10px; overflow: hidden; background: #FFFFFF; transition: border-color .3s, box-shadow .3s; }
+.plant-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.plant-card figcaption { padding: .6rem; text-align: center; font-weight: 600; color: #2E5A36; }
+.plant-card.selected { border-color: #2E5A36; box-shadow: 0 0 0 3px #D4EED1; }
+
+/* ===== Formulario ===== */
+.form-legend { font-size: .9rem; color: #555555; margin-bottom: 1rem; text-align: right; }
+.required { color: #C0392B; font-weight: bold; }
+.optional { color: #555555; font-weight: normal; font-size: .85rem; }
+
+label { display: block; font-weight: 600; margin-bottom: .5rem; color: #2E5A36; }
+
+input[type="text"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #FFFFFF;
+    color: #333333;
+}
+::placeholder { color: #6C757D; opacity: 1; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #2E5A36; box-shadow: 0 0 0 3px #D4EED1; }
+
+fieldset { border: none; margin-bottom: 1.5rem; padding: 0; }
+legend { font-weight: 600; color: #2E5A36; margin-bottom: .75rem; width: 100%; }
+
+.rating-group { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: .5rem; }
+.rating-group input[type="radio"] { transform: scale(1.2); cursor: pointer; }
+.rating-group label { display: inline; font-weight: normal; color: #333333; cursor: pointer; margin-right: .5rem; }
+
+.checkbox-group { display: grid; gap: .6rem; }
+.checkbox-item { display: flex; align-items: center; }
+.checkbox-item input[type="checkbox"] { margin-right: .5rem; transform: scale(1.2); cursor: pointer; }
+.checkbox-item label { display: inline; font-weight: normal; color: #333333; margin-bottom: 0; cursor: pointer; }
+
+input[type="submit"], .btn {
+    background-color: #2E5A36;
+    color: #FFFFFF;
+    padding: .85rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 1rem;
+    transition: background .3s;
+}
+input[type="submit"]:hover, .btn:hover { background-color: #1E3F25; }
+
+/* ===== Confirmación ===== */
+.confirmation h2 { margin-bottom: 1rem; }
+.confirmation p { margin-bottom: 1.5rem; }
+#review-count { font-weight: 600; color: #2E5A36; background: #D4EED1; padding: 1rem; border-radius: 6px; text-align: center; font-size: 1.15rem; margin-bottom: 1.5rem; }
+
+/* ===== Footer oscuro con tu nombre (como el ejemplo) ===== */
+footer {
+    background-color: #2E5A36;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: .95rem;
+}
+footer p { margin-bottom: .25rem; }
+
+/* ===== Celulares ===== */
+@media (max-width: 600px) {
+    main { margin: 1rem auto; }
+    .rating-group { gap: .9rem; }
+    .form-legend { text-align: left; }
+    .plant-grid { grid-template-columns: 1fr; }
+}
