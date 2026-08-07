@@ -67,3 +67,139 @@ function loadPlantCards() {
 
 // ===== Function 2: Populate dropdown =====
 function populateDropdown() {
+    const select = document.getElementById('plant-select');
+    if (!select) return;
+
+    plants.forEach(plant => {
+        const option = document.createElement('option');
+        option.value = plant.id;
+        option.textContent = plant.name;
+        select.appendChild(option);
+    });
+}
+
+// ===== Function 3: Show plant details =====
+function showPlantDetails(plantId) {
+    const detailsContainer = document.getElementById('plant-details');
+    if (!detailsContainer) return;
+
+    if (!plantId) {
+        detailsContainer.innerHTML = '<p><em>Select a plant from the dropdown to see its care guide.</em></p>';
+        return;
+    }
+
+    const plant = plants.find(p => p.id === plantId);
+
+    if (!plant) {
+        detailsContainer.innerHTML = '<p>Plant not found.</p>';
+        return;
+    }
+
+    // Conditional branching using CSS classes (no inline styles)
+    let difficultyClass = 'difficulty-easy';
+    if (plant.difficulty === 'Very Easy') {
+        difficultyClass = 'difficulty-easy';
+    } else if (plant.difficulty === 'Easy') {
+        difficultyClass = 'difficulty-medium';
+    } else {
+        difficultyClass = 'difficulty-hard';
+    }
+
+    const html = `
+        <h3>${plant.name} <em>(${plant.scientific})</em></h3>
+        <p>${plant.description}</p>
+        <div class="care-grid">
+            <div class="care-item">
+                <strong>☀️ Light</strong>
+                <span>${plant.light}</span>
+            </div>
+            <div class="care-item">
+                <strong>💧 Water</strong>
+                <span>${plant.water}</span>
+            </div>
+            <div class="care-item">
+                <strong>📊 Difficulty</strong>
+                <span class="${difficultyClass}">${plant.difficulty}</span>
+            </div>
+        </div>
+        <p class="pro-tip"><strong>💡 Pro Tip:</strong> ${plant.tips}</p>
+    `;
+    detailsContainer.innerHTML = html;
+
+    localStorage.setItem('lastViewedPlant', plant.name);
+}
+
+// ===== Function 4: Show daily tip =====
+function showDailyTip() {
+    const tipContainer = document.getElementById('daily-tip');
+    if (!tipContainer) return;
+
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    const tipIndex = dayOfYear % dailyTips.length;
+    tipContainer.innerHTML = `<strong>Today's Tip:</strong> ${dailyTips[tipIndex]}`;
+}
+
+// ===== Function 5: Handle form submission =====
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const feedback = document.getElementById('form-feedback');
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const topic = form.topic.value;
+    const message = form.message.value.trim();
+
+    if (!name || !email || !topic || !message) {
+        feedback.className = 'form-feedback error';
+        feedback.textContent = 'Please fill in all required fields.';
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        feedback.className = 'form-feedback error';
+        feedback.textContent = 'Please enter a valid email address.';
+        return;
+    }
+
+    const savedMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+    const newMessage = {
+        name: name,
+        email: email,
+        topic: topic,
+        message: message,
+        timestamp: new Date().toISOString()
+    };
+    savedMessages.push(newMessage);
+    localStorage.setItem('contactMessages', JSON.stringify(savedMessages));
+
+    feedback.className = 'form-feedback success';
+    feedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your message about "${topic}" has been received. We will get back to you at ${email} soon.`;
+
+    form.reset();
+}
+
+// ===== Initialize on page load =====
+document.addEventListener('DOMContentLoaded', () => {
+    const visitCount = parseInt(localStorage.getItem('visitCount') || '0') + 1;
+    localStorage.setItem('visitCount', visitCount);
+    console.log(`Welcome! You have visited ${visitCount} time(s).`);
+
+    if (document.getElementById('plant-select')) {
+        populateDropdown();
+        loadPlantCards();
+        showDailyTip();
+
+        document.getElementById('plant-select').addEventListener('change', (e) => {
+            showPlantDetails(e.target.value);
+        });
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
+});
