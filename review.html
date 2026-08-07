@@ -3,27 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for reviewing your Leafy Living plant.">
+    <meta name="description" content="Product review form for Leafy Living beginner-friendly houseplants.">
+    <meta name="author" content="Florangel Salgado">
     <meta name="theme-color" content="#2E5A36">
-    <title>Review Confirmation | Leafy Living</title>
+    <title>Product Review | Leafy Living</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Thank You!</h1>
+        <h1>Product Review</h1>
         <p>Leafy Living &ndash; A Beginner's Guide to Indoor Houseplants</p>
     </header>
 
     <main>
-        <section class="confirmation">
-            <h2>Your review has been posted!</h2>
-            <p id="review-summary" hidden></p>
-            <p>We appreciate your feedback. It helps other beginners choose the right plant and learn how to care for it.</p>
-            <div id="review-count">Total reviews completed: <span id="count">0</span></div>
-            <a href="form.html" class="btn">Submit Another Review</a>
+        <section aria-label="Our beginner-friendly plants">
+            <h2>Our Beginner-Friendly Plants</h2>
+            <div class="plant-grid">
+                <figure class="plant-card" id="card-snake-plant">
+                    <img src="images/snake-plant.jpg" alt="Snake Plant with upright variegated leaves in a white pot">
+                    <figcaption>Snake Plant</figcaption>
+                </figure>
+                <figure class="plant-card" id="card-golden-pothos">
+                    <img src="images/golden-pothos.jpg" alt="Golden Pothos with heart-shaped green and yellow leaves">
+                    <figcaption>Golden Pothos</figcaption>
+                </figure>
+                <figure class="plant-card" id="card-zz-plant">
+                    <img src="images/zz-plant.jpg" alt="ZZ Plant with glossy dark green leaves in a white pot">
+                    <figcaption>ZZ Plant</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <p class="form-legend"><span class="required">*</span> indicates a required field</p>
+            <form method="get" action="review.html" id="review-form">
+
+                <label for="product">Product Name <span class="required">*</span></label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                </select>
+
+                <fieldset>
+                    <legend>Overall Rating <span class="required">*</span></legend>
+                    <div class="rating-group">
+                        <input type="radio" id="rate1" name="rating" value="1" required>
+                        <label for="rate1">&#9734;</label>
+                        <input type="radio" id="rate2" name="rating" value="2" required>
+                        <label for="rate2">&#9734;&#9734;</label>
+                        <input type="radio" id="rate3" name="rating" value="3" required>
+                        <label for="rate3">&#9734;&#9734;&#9734;</label>
+                        <input type="radio" id="rate4" name="rating" value="4" required>
+                        <label for="rate4">&#9734;&#9734;&#9734;&#9734;</label>
+                        <input type="radio" id="rate5" name="rating" value="5" required>
+                        <label for="rate5">&#9734;&#9734;&#9734;&#9734;&#9734;</label>
+                    </div>
+                </fieldset>
+
+                <label for="install-date">Date of Installation <span class="required">*</span></label>
+                <input type="date" id="install-date" name="install-date" required>
+
+                <fieldset>
+                    <legend>Which features did you find useful in the product? <em>(Check all that apply)</em></legend>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature-durability" name="features" value="Durability">
+                            <label for="feature-durability">Durability (tolerates neglect)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature-ease" name="features" value="Ease of Use">
+                            <label for="feature-ease">Ease of Use (simple care routine)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature-performance" name="features" value="Performance">
+                            <label for="feature-performance">Performance (purifies the air)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feature-design" name="features" value="Design">
+                            <label for="feature-design">Design (beautiful leaves)</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <label for="review-text">Written Review <span class="optional">(Optional)</span></label>
+                <textarea id="review-text" name="review-text" rows="5" placeholder="How is your plant growing? Share your experience..."></textarea>
+
+                <label for="username">Your Name <span class="optional">(Optional)</span></label>
+                <input type="text" id="username" name="username" placeholder="Florangel Salgado" autocomplete="name">
+
+                <input type="submit" value="Post Review">
+            </form>
         </section>
     </main>
 
@@ -31,7 +103,5 @@
         <p>&copy;2026 &#127807; Florangel Salgado &#127807;</p>
         <p>Last Modification: 08/08/2026</p>
     </footer>
-
-    <script src="scripts/review.js"></script>
 </body>
 </html>
